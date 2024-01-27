@@ -67,18 +67,9 @@ def hello_world():
                     img_variable_list.append(img_variable)
                 descriptions[i] = remove_html_tags(description.replace(img_variable, ''))
             data_for_template = zip(row_numbers, names, descriptions, timestarts,img_variable_list)
-            select_query = 'SELECT * FROM special_mentions_data'
-            cursor.execute(select_query)
-            rows = cursor.fetchall()
-            result = [{'id': row['id'],
-                           'name': row['name'],
-                           'image': row['image'],
-                           'title': row['title'],
-                           'title_description': row['title_description'],
-                           'added_at': row['added_at'].isoformat() if row['added_at'] else None
-                           } for row in rows]
+           
             
-            return render_template('index.html', data=data_for_template,mentions=result)
+            return render_template('index.html', data=data_for_template)
            
             
 
