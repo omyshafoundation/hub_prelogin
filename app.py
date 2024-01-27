@@ -29,13 +29,14 @@ def hello_world():
             select_query = 'SELECT * FROM special_mentions_data' 
             cursor.execute(select_query)
             rows = cursor.fetchall()
-            result = [{'id': row['id'],
-                           'name': row['name'],
-                           'image': row['image'],
-                           'title': row['title'],
-                           'title_description': row['title_description'],
-                           'added_at': row['added_at'].isoformat() if row['added_at'] else None
-                           } for row in rows]
+            result = [{'id': row[0],
+           'name': row[1],
+           'image': row[2],
+           'title': row[3],
+           'title_description': row[4],
+           'added_at': row[5].isoformat() if row[5] else None
+           } for row in rows]
+
 
             starting_row_number = max(1, total_records - 3)  # Display the last 4 rows as 96, 97, 98, 99
 
