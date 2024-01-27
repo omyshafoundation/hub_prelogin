@@ -507,16 +507,17 @@
                 <div class="sub_leaderboard_container">
                     <div style="width: 544px; height: 653px; left: 151px; top: 111px; position: absolute">
                         <div class="sub_leaderboard_bg" >
+                            {% for student in students[3:10] %}
                             <div class="sub_leaderboard_tab" >
-                                {% for student in students[3:10] %}
+                                
                                 <div class="sub_leaderboard_rank"># {{loop.index + 3}}</div>
                                 <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
                                 <div class="sub_leaderboard_name">{{ student.fullname }}</div>
                                 <div class="sub_leaderboard_score">{{student.grades_total|round(2)}}</div>
                                 <div class="sub_leaderboard_underline"></div>
-                                {% endfor %}
+                                
                             </div>
-                            
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
