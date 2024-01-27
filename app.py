@@ -48,7 +48,7 @@ def hello_world():
                 print(query)
                 cursor.execute(query)
                 ids = cursor.fetchone()
-                id = ids[0]
+                id = ids[0] if ids else None
                 
                 description = description.replace('@@PLUGINFILE@@', f'https://hub.vong.earth/pluginfile.php/2/calendar/event_description/{id}')
                 img_start_index = description.find('<img')
