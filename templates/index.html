@@ -487,19 +487,19 @@
                     
                     <div class="leaderboard_container">
                         <img style="display:flex; width: 161.10px; height: 163.74px; left: 180.46px; top: 32.82px; position: absolute; border-radius: 9999px" src="https://via.placeholder.com/161x164" />
-                        <div style="display:flex; left: 214.06px; top: 204.89px; position: absolute; color: black; font-size: 29.46px; font-family: Poppins; font-weight: 600; line-height: 18.41px; word-wrap: break-word">Jacob </div>
+                        <div style="display:flex; left: 214.06px; top: 204.89px; position: absolute; color: black; font-size: 29.46px; font-family: Poppins; font-weight: 600; line-height: 18.41px; word-wrap: break-word">{{ top_three_students[0].fullname }}</div>
                         <div style="display:flex; width: 25.09px; height: 25.09px; left: 218.32px; top: 230px; position: absolute; color: black; font-size: 21.81px; font-family: Inter; font-weight: 700; word-wrap: break-word">#1</div>
-                        <div style="display:flex; left: 252.85px; top: 234.97px; position: absolute; color: rgba(0, 0, 0, 0.36); font-size: 19.87px; font-family: DM Sans; font-weight: 700; line-height: 18.41px; word-wrap: break-word">2550 </div>
+                        <div style="display:flex; left: 252.85px; top: 234.97px; position: absolute; color: rgba(0, 0, 0, 0.36); font-size: 19.87px; font-family: DM Sans; font-weight: 700; line-height: 18.41px; word-wrap: break-word">{{ top_three_students[0].grades_total|round(2) }}</div>
         
                         <img style="display:flex; width: 148.21px; height: 150.64px; left: 63.58px; top: 287.62px; position: absolute; border-radius: 9999px" src="https://via.placeholder.com/148x151" />
-                        <div style="display:flex; left: 90.28px; top: 445px; position: absolute; color: black; font-size: 29.46px; font-family: Poppins; font-weight: 600; line-height: 18.41px; word-wrap: break-word">Joann</div>
+                        <div style="display:flex; left: 90.28px; top: 445px; position: absolute; color: black; font-size: 29.46px; font-family: Poppins; font-weight: 600; line-height: 18.41px; word-wrap: break-word">{{ top_three_students[1].fullname }}</div>
                         <div style="display:flex; width: 30.30px; height: 24.84px; left: 90.41px; top: 467.77px; position: absolute; color: black; font-size: 21.81px; font-family: Inter; font-weight: 700; word-wrap: break-word">#2</div>
-                        <div style="display:flex; left: 129.90px; top: 472.74px; position: absolute; color: rgba(0, 0, 0, 0.36); font-size: 19.87px; font-family: DM Sans; font-weight: 700; line-height: 18.41px; word-wrap: break-word">2350 </div>
+                        <div style="display:flex; left: 129.90px; top: 472.74px; position: absolute; color: rgba(0, 0, 0, 0.36); font-size: 19.87px; font-family: DM Sans; font-weight: 700; line-height: 18.41px; word-wrap: break-word">{{ top_three_students[1].grades_total|round(2) }} </div>
                         
                         <img style="display:flex; width: 148.21px; height: 150.64px; left: 323.39px; top: 287.62px; position: absolute; border-radius: 9999px" src="https://via.placeholder.com/148x151" />
-                        <div style="display:flex; left: 350.54px; top: 444.08px; position: absolute; color: black; font-size: 29.46px; font-family: Poppins; font-weight: 600; line-height: 18.41px; word-wrap: break-word">Jacob </div>
+                        <div style="display:flex; left: 350.54px; top: 444.08px; position: absolute; color: black; font-size: 29.46px; font-family: Poppins; font-weight: 600; line-height: 18.41px; word-wrap: break-word">{{ top_three_students[2].fullname }}</div>
                         <div style="display:flex; width: 30.30px; height: 24.84px; left: 356.35px; top: 466.78px; position: absolute; color: black; font-size: 21.81px; font-family: Inter; font-weight: 700; word-wrap: break-word">#3</div>
-                        <div style="display:flex; left: 392.36px; top: 471.75px; position: absolute; color: rgba(0, 0, 0, 0.36); font-size: 19.87px; font-family: DM Sans; font-weight: 700; line-height: 18.41px; word-wrap: break-word">2350 </div>
+                        <div style="display:flex; left: 392.36px; top: 471.75px; position: absolute; color: rgba(0, 0, 0, 0.36); font-size: 19.87px; font-family: DM Sans; font-weight: 700; line-height: 18.41px; word-wrap: break-word">{{ top_three_students[2].grades_total|round(2) }}</div>
                     </div>
                     
                 </div>
@@ -508,54 +508,15 @@
                     <div style="width: 544px; height: 653px; left: 151px; top: 111px; position: absolute">
                         <div class="sub_leaderboard_bg" >
                             <div class="sub_leaderboard_tab" >
-                                <div class="sub_leaderboard_rank">#4</div>
+                                {% for student in students[3:10] %}
+                                <div class="sub_leaderboard_rank"># {{loop.index + 3}}</div>
                                 <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Sebastian</div>
-                                <div class="sub_leaderboard_score">1924</div>
+                                <div class="sub_leaderboard_name">{{ student.fullname }}</div>
+                                <div class="sub_leaderboard_score">{{student.grades_total|round(2)}}</div>
                                 <div class="sub_leaderboard_underline"></div>
+                                {% endfor %}
                             </div>
-                            <div class="sub_leaderboard_tab">
-                                <div class="sub_leaderboard_rank">#5</div>
-                                <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Jason</div>
-                                <div class="sub_leaderboard_score">1875</div>
-                                <div class="sub_leaderboard_underline"></div>
-                            </div>
-                            <div class="sub_leaderboard_tab">
-                                <div class="sub_leaderboard_rank">#6</div>
-                                <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Natalie</div>
-                                <div class="sub_leaderboard_score">1774</div>
-                                <div class="sub_leaderboard_underline"></div>
-                            </div>
-                            <div class="sub_leaderboard_tab">
-                                <div class="sub_leaderboard_rank">#7</div>
-                                <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Hannah</div>
-                                <div class="sub_leaderboard_score">1723</div>
-                                <div class="sub_leaderboard_underline"></div>
-                            </div>
-                            <div class="sub_leaderboard_tab">
-                                <div class="sub_leaderboard_rank">#8</div>
-                                <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Serenity</div>
-                                <div class="sub_leaderboard_score">1559</div>
-                                <div class="sub_leaderboard_underline"></div>
-                            </div>
-                            <div class="sub_leaderboard_tab">
-                                <div class="sub_leaderboard_rank">#9</div>
-                                <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Andrew</div>
-                                <div class="sub_leaderboard_score">1464</div>
-                                <div class="sub_leaderboard_underline"></div>    
-                            </div>
-                            <div class="sub_leaderboard_tab">
-                                <div class="sub_leaderboard_rank">#10</div>
-                                <img class="sub_leaderboard_img" src="https://via.placeholder.com/49x49" />
-                                <div class="sub_leaderboard_name">Hannah</div>
-                                <div class="sub_leaderboard_score">1428</div>
-                                <div class="sub_leaderboard_underline"></div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
