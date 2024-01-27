@@ -119,6 +119,9 @@ def submit():
             # Use request.files to get the uploaded file
             image = request.files['image']
             
+            # Save the uploaded file to the 'uploads' folder
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
+
             with mysql.connector.connect(
                 host=host,
                 user=user,
@@ -129,9 +132,6 @@ def submit():
                     # Use parameterized query to prevent SQL injection
                     insert_query = "INSERT INTO special_mentions_data (name, image, title, title_description) VALUES (%s, %s, %s, %s);"
                     cursor.execute(insert_query, (name, image.filename, title, description))
-
-                    # Save the uploaded file
-                    image.save(f"./uploads/{image.filename}")
 
                     conn.commit()
 
