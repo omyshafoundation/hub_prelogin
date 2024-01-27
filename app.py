@@ -112,7 +112,7 @@ def submit():
     host = 'localhost'
     user = 'vongle'
     password = 'ashiv3377'
-    database = 'special_mentions'
+    database = 'osqacademy'
 
     try:
         if request.method == 'POST':
