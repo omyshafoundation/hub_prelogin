@@ -64,7 +64,7 @@ def hello_world():
                 descriptions[i] = remove_html_tags(description.replace(img_variable, ''))
             data_for_template = zip(row_numbers, names, descriptions, timestarts,img_variable_list)
 
-            return render_template('event.html', data=data_for_template)
+            return render_template('index.html', data=data_for_template)
            
             
 
