@@ -1,10 +1,11 @@
 from flask import Flask,render_template,request
 import mysql.connector
+import os
 import re
 from datetime import datetime, timezone, timedelta
 from bs4 import BeautifulSoup
 app = Flask(__name__)
-
+app.config['UPLOAD_FOLDER'] = 'static/uploads' 
 @app.route('/')
 def hello_world():
     mysql_db_config = {
