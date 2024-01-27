@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 import mysql.connector
 import re
 from datetime import datetime, timezone, timedelta
@@ -92,13 +92,53 @@ def remove_html_tags(html_content):
     return text_content
 from flask import send_from_directory
 
-# ... (your existing Flask code)
+
 
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     return send_from_directory('static', filename)
 
-# ... (rest of your Flask code)
+
+@app.route('/admin')
+def admin():
+    return render_template('adminform.html')
+
+@app.route('/submit_admin', methods=['POST'])
+def submit():
+    host = 'localhost'
+    user = 'vongle'
+    password = 'ashiv3377'
+    database = 'special_mentions'
+
+    try:
+        if request.method == 'POST':
+            name = request.form['name']
+            title = request.form['title']
+            description = request.form['description']
+
+            # Use request.files to get the uploaded file
+            image = request.files['image']
+            
+            with mysql.connector.connect(
+                host=host,
+                user=user,
+                password=password,
+                database=database
+            ) as conn:
+                with conn.cursor(dictionary=True) as cursor:
+                    # Use parameterized query to prevent SQL injection
+                    insert_query = "INSERT INTO special_mentions_data (name, image, title, title_description) VALUES (%s, %s, %s, %s);"
+                    cursor.execute(insert_query, (name, image.filename, title, description))
+
+                    # Save the uploaded file
+                    image.save(f"./uploads/{image.filename}")
+
+                    conn.commit()
+
+    except mysql.connector.Error as err:
+        return f"Error: {err}"
+    
+    return "Data submitted successfully."
 
 
 if __name__ == '__main__':
