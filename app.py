@@ -147,12 +147,13 @@ def submit():
                     insert_query = "INSERT INTO special_mentions_data (name, image, title, title_description) VALUES (%s, %s, %s, %s);"
                     cursor.execute(insert_query, (name, image.filename, title, description))
 
-                    conn.commit()
+                # Commit the changes after the inner cursor block
+                conn.commit()
+
+            return "Data submitted successfully."
 
     except mysql.connector.Error as err:
         return f"Error: {err}"
-    
-    return "Data submitted successfully."
 
 
 if __name__ == '__main__':
