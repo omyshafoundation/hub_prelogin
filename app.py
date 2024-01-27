@@ -198,13 +198,12 @@ def hello_world():
             return render_template('index.html', data=data_for_template,mentions=result,top_three_students=top_three_students, students=students)
            
             
-
     except Exception as e:
         # Handle exceptions appropriately (e.g., log the error)
         print(f"Error: {e}")
+        return render_template('error.html', error_message=str(e)), 500
 
     finally:
-        # Close the database connection in the 'finally' block to ensure it's always closed
         if mysql_connection.is_connected():
             cursor.close()
             mysql_connection.close()
