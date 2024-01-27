@@ -6,6 +6,58 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+                .navbar {
+            background-color: #E50000;
+            overflow: hidden;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar img {
+            height: 40px; /* Adjust the height of the logo as needed */
+            margin-right: 20px; /* Adjust the margin as needed */
+        }
+
+        .navbar button {
+            float: right;
+            display: block;
+            color: white;
+            background-color: #E5B300; /* Green color for the login button, you can change it */
+            border: none;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            .navbar a, .navbar button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .navbar img {
+                margin-right: 0;
+                margin-bottom: 10px; /* Adjust the margin as needed */
+            }
+        }
         img {
 
             border-radius: 5px;
@@ -88,6 +140,14 @@
 </head>
 
 <body>
+    <div name="navbar_by_ash" id="navabar">
+        <div class="navbar">
+            <a href="https://hub.vong.earth/login/index.php">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            </a>
+            <button onclick="location.href='login.html'">LOGIN</button>
+        </div>
+    </div>
     <div name="headerbysanjana">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
             <ol class="carousel-indicators">
