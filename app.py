@@ -5,7 +5,10 @@ import re
 from datetime import datetime, timezone, timedelta
 from bs4 import BeautifulSoup
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/uploads' 
+app.config['UPLOAD_FOLDER'] = os.path.join(app.static_folder, 'uploads')  # Use an absolute path
+
+# Ensure the 'uploads' folder exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 @app.route('/')
 def hello_world():
     mysql_db_config = {
