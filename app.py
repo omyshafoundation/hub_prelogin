@@ -118,74 +118,74 @@ def hello_world():
 
     # Process and collect grades for each user
    
-            excluded_titles = ["Course total"]
+                excluded_titles = ["Course total"]
 
-            for user in users_response:
-                user_id = user['id']
-                fullname = user['fullname']
-                email_address = user['email']
+                for user in users_response:
+                    user_id = user['id']
+                    fullname = user['fullname']
+                    email_address = user['email']
 
         # Retrieve grades table for the user
-            grades_response = make_moodle_api_request('gradereport_user_get_grades_table', {
+                    grades_response = make_moodle_api_request('gradereport_user_get_grades_table', {
                     'userid': user_id,
                     'courseid': course_id
-            })
+                    })
 
         # Process and collect the grades for the user
-            if 'tables' in grades_response and len(grades_response['tables']) > 0:
-                    grades_table = grades_response['tables'][0]['tabledata']
-                    grades_total = 0  # Initialize total grades for the user
+                    if 'tables' in grades_response and len(grades_response['tables']) > 0:
+                        grades_table = grades_response['tables'][0]['tabledata']
+                        grades_total = 0  # Initialize total grades for the user
 
-            for grade_item in grades_table:
-                    if 'itemname' in grade_item and 'content' in grade_item['itemname']:
-                        grade_item_name = grade_item['itemname']['content']
-                    else:
-                        grade_item_name = 'N/A'
+                        for grade_item in grades_table:
+                            if 'itemname' in grade_item and 'content' in grade_item['itemname']:
+                                grade_item_name = grade_item['itemname']['content']
+                            else:
+                                grade_item_name = 'N/A'
 
-            grade = 'N/A'
+                            grade = 'N/A'
 
-            if 'grade' in grade_item:
-                    grade = grade_item['grade']['content']
+                            if 'grade' in grade_item:
+                                grade = grade_item['grade']['content']
 
                   # Exclude rows related to specific column titles
-            exclude_row = True
-            for title in excluded_titles:
-                if title in grade_item_name:
-                  exclude_row = False
-                  break
+                            exclude_row = True
+                            for title in excluded_titles:
+                                if title in grade_item_name:
+                                    exclude_row = False
+                                    break
 
-                if exclude_row:
-                    continue
+                            if exclude_row:
+                                continue
 
     # Check if the grade is numeric
-            if grade.replace('.', '', 1).isdigit():
-                grades_total += float(grade)
+                            if grade.replace('.', '', 1).isdigit():
+                                grades_total += float(grade)
 
-            student1 = {
-                'user_id': user_id,
+                            student1 = {
+                                'user_id': user_id,
                 'fullname': fullname,
                 'email_address': email_address,
                 'grades_total': grades_total,
                 'avatar_color': generate_random_color()  # Generate random avatar color
-            }
-            students_data.append(student1)
+                             }
+                            students_data.append(student1)
             students_dict = {}
             print(students_data)
             for student_data in students_data:
                 user_id = student_data['user_id']
                 grades_total = student_data['grades_total']
 
-            if user_id in students_dict:
-                students_dict[user_id]['grades_total'] += grades_total
-            else:
-                student = {
+                if user_id in students_dict:
+                    students_dict[user_id]['grades_total'] += grades_total
+                else:
+                    student = {
             'user_id': user_id,
             'fullname': student_data['fullname'],
             'email_address': student_data['email_address'],
             'grades_total': grades_total,
             'avatar_color': generate_random_color()
-            }
-            students_dict[user_id] = student
+                }
+                    students_dict[user_id] = student
   
 
             students = list(students_dict.values())
