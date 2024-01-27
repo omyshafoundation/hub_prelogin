@@ -1,5 +1,7 @@
 from flask import Flask,render_template,request
+import requests
 import mysql.connector
+import random
 import os
 import re
 from datetime import datetime, timezone, timedelta
