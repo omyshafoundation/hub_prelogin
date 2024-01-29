@@ -137,6 +137,61 @@ students.sort(key=lambda x: x['grades_total'], reverse=True)
 # Retrieve top three students
 top_three_students = students[:3]
 
+students_dict = {}
+for student_data in students_data:
+    user_id = student_data['user_id']
+    grades_total = student_data['grades_total']
+
+    if user_id in students_dict:
+        students_dict[user_id]['grades_total'] += grades_total
+    else:
+        student = {
+            'user_id': user_id,
+            'fullname': student_data['fullname'],
+            'email_address': student_data['email_address'],
+            'grades_total': grades_total,
+            'avatar_color': generate_random_color()
+        }
+        students_dict[user_id] = student
+
+students = list(students_dict.values())
+# Sort students based on grades in descending order
+students.sort(key=lambda x: x['grades_total'], reverse=True)
+
+# Retrieve top three students
+top_three_students = students[:3]
+
+host = 'localhost'
+user = 'vongle'
+password = 'ashiv3377'
+database = 'osqacademy'
+
+
+try:
+        # Connect to the database
+        with mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        ) as conn:
+            with conn.cursor(dictionary=True) as cursor:
+                # Fetch all rows from the table
+                select_query = 'SELECT * FROM special_mentions_data'
+                cursor.execute(select_query)
+                rows = cursor.fetchall()
+
+                # Convert the rows to a list of dictionaries
+                result = [{'id': row['id'],
+                           'name': row['name'],
+                           'image': row['image'],
+                           'title': row['title'],
+                           'title_description': row['title_description'],
+                           'added_at': row['added_at'].isoformat() if row['added_at'] else None
+                           } for row in rows]
+except mysql.connector.Error as err:
+    print("error")
+
 
 html_template = '''
 <!DOCTYPE html>
@@ -504,42 +559,7 @@ html_template = '''
 </html>
 '''
 app = Flask(__name__)
-
-host = 'localhost'
-user = 'vongle'
-password = 'ashiv3377'
-database = 'osqacademy'
 template = Template(html_template)
-
-data = {
-    'top_three_students': top_three_students,
-    'students': students
-}
-
-try:
-        # Connect to the database
-        with mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
-        ) as conn:
-            with conn.cursor(dictionary=True) as cursor:
-                # Fetch all rows from the table
-                select_query = 'SELECT * FROM special_mentions_data'
-                cursor.execute(select_query)
-                rows = cursor.fetchall()
-
-                # Convert the rows to a list of dictionaries
-                result = [{'id': row['id'],
-                           'name': row['name'],
-                           'image': row['image'],
-                           'title': row['title'],
-                           'title_description': row['title_description'],
-                           'added_at': row['added_at'].isoformat() if row['added_at'] else None
-                           } for row in rows]
-except mysql.connector.Error as err:
-    print("error")
 data = {
     'top_three_students': top_three_students,
     'students': students,
