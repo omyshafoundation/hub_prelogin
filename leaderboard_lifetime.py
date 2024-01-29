@@ -546,7 +546,7 @@ data = {
 rendered_html = template.render(data)
 
 
-with open('lifetime.html', 'w') as file:
+with open('static/reports/lifetime.html', 'w') as file:
     file.write(rendered_html)
 
 print("Leaderboard generated successfully!")
