@@ -538,7 +538,7 @@ html_template = '''
                     <div style="position: relative; ">
                         <div class="special-mentions_title" >{{ mention.title }}</div>
                         <div style="width: 156.46px; height: 170.60px; left: 42.09px; top: 0.17px; position: absolute">
-                            <img class="special-mentions_img" src='static/uploads/{{ mention.image }}' />
+                            <img class="special-mentions_img" src='/opt/hub_prelogin/static/uploads/{{ mention.image }}' />
                             <div class="special-mentions_border"></div>
                         </div>
                         <div style="width: 319px; height: 92.77px; left: 216px; top: 106.17px; position: relative; text-align: center; color: black; font-size: 12.26px; font-family: Poppins; font-weight: 500; word-wrap: break-word">{{ mention.title_description }}<br/><br/></div>
@@ -569,7 +569,7 @@ data = {
 rendered_html = template.render(data)
 
 
-with open(os.path.join(directory, 'lifetime.html'), 'w') as file:
+with open('/var/www/reports/lifetime.html', 'w') as file:
     file.write(rendered_html)
 
 print("Leaderboard generated successfully!")
