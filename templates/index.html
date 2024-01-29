@@ -542,17 +542,17 @@
         </div>
     </div>
     <iframe src="http://139.84.145.70:5000/leaderboard" width="100%" title="Embedded Content" height="2000px" frameborder="0" style="overflow: hidden;border: none;"></iframe>
-    <footer>
+    <footer style="font-family:'Poppins', sans-serif;">
         <div class="footer-main">
             <div class="footer-info">
               <div class="footer-info-div">
                 <img
-                  src="/assets/Frame 40.png"
+                  src="{{ url_for('static', filename='images/logo.png') }}"
                   alt="vonghub logo"
                   class="footer-logo"
                 />
     
-                <hr />
+                <hr style="color: #fff;" />
     
                 <p>
                   - G-9, Hemkunt Tower 98 Nehru Place <br />
@@ -564,13 +564,13 @@
             </div>
             <div class="footer-text">
               <div class="footer-text-div">
-                <hr />
+                <hr style="color: #fff;" />
                 <p>
                   Let's transform the World together by taking small steps toward a
                   greener, cleaner, and more sustainable future. Be a part of the
                   VONG movement, and become the change-makers of tomorrow!
                 </p>
-                <hr />
+                <hr style="color: #fff;" />
               </div>
             </div>
           </div>
@@ -702,6 +702,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 </body>
 
 </html>
