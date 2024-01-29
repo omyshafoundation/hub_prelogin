@@ -445,15 +445,16 @@
                                 <p style="color: black; font-weight: bold;">{{ data_list[2][3] }}</p>
                             </div>
                         </div>
-
                         <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
-                            {{ data_list[1][4]|safe }}
+                            {{ data_list[2][4]|safe }}
                             <div style="margin-left: 10px;">
-                                <h2 style="padding-left: 20px;">{{ data_list[1][1] }}</h2>
+                                <h2 style="padding-left: 20px;">{{ data_list[2][1] }}</h2>
 
-                                <p style="color: black; font-weight: bold;">{{ data_list[1][3] }}</p>
+                                <p style="color: black; font-weight: bold;">{{ data_list[2][3] }}</p>
                             </div>
                         </div>
+
+                        
                         <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
                             {{ data_list[0][4]|safe }}
                             <div style="margin-left: 10px;">
@@ -567,8 +568,9 @@
                 img.style.height = "188px";
             });
             longNewsImages.forEach(function (img) {
-                img.style.width = "100%";
-                img.style.height = "500px";
+                img.style.width = "400px";
+                img.style.height = "300px";
+                img.style.paddingLeft = "120px";
             });
         });
     </script>
