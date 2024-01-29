@@ -6,10 +6,13 @@ from jinja2 import Template
 import random
 from datetime import datetime, timedelta
 import re
+import os
 current_date = datetime.now()
 # API URL
 api_url = 'https://hub.vong.earth/webservice/rest/server.php'
-
+directory = '/static/reports/'
+if not os.path.exists(directory):
+    os.makedirs(directory)
 # Access token (replace 'your-access-token' with your actual access token)
 access_token = 'd478810b234eb7682244b9f474c7468f'
 date_chk=False
@@ -546,7 +549,7 @@ data = {
 rendered_html = template.render(data)
 
 
-with open('/static/reports/lifetime.html', 'w') as file:
+with open(os.path.join(directory, 'lifetime.html'), 'w') as file:
     file.write(rendered_html)
 
 print("Leaderboard generated successfully!")
