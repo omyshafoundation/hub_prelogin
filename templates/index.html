@@ -6,10 +6,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        body {
             font-family: 'Poppins', sans-serif;
         }
-                .navbar {
+
+        .navbar {
             background-color: #E50000;
             overflow: hidden;
             padding: 10px 20px;
@@ -26,15 +35,18 @@
         }
 
         .navbar img {
-            height: 40px; /* Adjust the height of the logo as needed */
-            margin-right: 20px; /* Adjust the margin as needed */
+            height: 40px;
+            /* Adjust the height of the logo as needed */
+            margin-right: 20px;
+            /* Adjust the margin as needed */
         }
 
         .navbar button {
             float: right;
             display: block;
             color: white;
-            background-color: #E5B300; /* Green color for the login button, you can change it */
+            background-color: #E5B300;
+            /* Green color for the login button, you can change it */
             border: none;
             padding: 5px 20px;
             text-align: center;
@@ -45,7 +57,9 @@
 
         /* Responsive styles */
         @media screen and (max-width: 600px) {
-            .navbar a, .navbar button {
+
+            .navbar a,
+            .navbar button {
                 float: none;
                 display: block;
                 text-align: left;
@@ -55,9 +69,11 @@
 
             .navbar img {
                 margin-right: 0;
-                margin-bottom: 10px; /* Adjust the margin as needed */
+                margin-bottom: 10px;
+                /* Adjust the margin as needed */
             }
         }
+
         img {
 
             border-radius: 5px;
@@ -108,7 +124,7 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 
         }
 
@@ -137,318 +153,342 @@
             display: inline-block;
             vertical-align: top;
         }
+
         /*vaibhav's leaerboardd*/
-        .main_container{
-        display: flex;
-        width: 100%; 
-        height: 100%; 
-        position: absolute; 
-        
-    }
-    .left{
-        display: flex;
-        position: relative;
-    }
-    .right{
-        display: flex;
-        position: relative;
-    }
-    .leaderboard{ 
-        display: flex;  
-        width: 635px; 
-        height: 113.57px; 
-        left: 50px; 
-        top: 67px; 
-        position: absolute; 
-        background: white; 
-        box-shadow: 0px 0px 72.27030181884766px 3.2263529300689697px rgba(0, 0, 0, 0.25); 
-        border-radius: 25.81px; 
-        backdrop-filter: blur(59.95px);
-    }
-    .sub_leaderboard_rank{
-        display:flex; 
-        width: 21.95px; 
-        height: 17.99px; 
-        left: -0px; 
-        top: 13.67px; 
-        position: relative; 
-        color: black; 
-        font-size: 15.80px; 
-        font-family: Inter; 
-        font-weight: 700; 
-        word-wrap: break-word
-    }
-    .sub_leaderboard_img{
-        display:flex; 
-        width: 48.58px; 
-        height: 48.58px; 
-        left: 10px; 
-        top: 0px; 
-        position: relative; 
-        border-radius: 9999px
-    }
-    .sub_leaderboard_name{
-        display:flex; 
-        left: 102.20px; 
-        top: 6.84px; 
-        position: absolute; 
-        color: black; 
-        font-size: 21.23px; 
-        font-family: Poppins; 
-        font-weight: 600; 
-        word-wrap: break-word
-    }
-    .sub_leaderboard_score{
-        display:flex; 
-        width: 52.18px; 
-        height: 14.75px; 
-        left: 391.53px; 
-        top: 15.47px; 
-        position: absolute; 
-        color: #A3A3A3; 
-        font-size: 14.39px; 
-        font-family: Inter; 
-        font-weight: 700; 
-        word-wrap: break-word
-    }
-    .sub_leaderboard_underline{
-        display:flex; 
-        width: 417.44px; 
-        height: 0px; 
-        left: 35.99px; 
-        top: 63.34px; 
-        position: absolute; 
-        border-top: 0.36px rgba(94.56, 89.20, 89.20, 0.54) solid;
-    }
-    .sub_leaderboard_container{
-        display: flex;
-        width: 1440px; 
-        height: 967px; 
-        left: -49px; 
-        top: 450px; 
-        z-index: 10;
-        position: absolute;
-    }
-    .big_red_circle{
-        width: 705px; 
-        height: 681px; 
-        left: 646px; 
-        top: 1050px; 
-        position: absolute; 
-        background: rgba(229, 0, 0, 0.94); 
-        border-radius: 9999px;
-    }
-    .sub_leaderboard_bg{
-        display: flex; 
-        flex-direction: column; 
-        gap: 40px; 
-        width: 544px; 
-        height: 653px; 
-        left: 0px; 
-        top: 412px; 
-        position: absolute;
-        background: white; 
-        box-shadow: 0px 0px 90.73945617675781px rgba(0, 0, 0, 0.25); 
-        border-radius: 32.41px; 
-        backdrop-filter: blur(75.27px)
-    }
-    .sub_leaderboard_tab{
-        display: flex; 
-        position: relative; 
-        top:20px; 
-        left: 35px;
-    }
-    .leaderboard_container{
-        width: 536px;
-        height: 550.41px; 
-        left: 100px; 
-        top: 282px; 
-        position: absolute;
-        background: white; 
-        box-shadow: 0px 0px 55.63670349121094px 2.483781337738037px rgba(0, 0, 0, 0.25); 
-        border-radius: 19.87px; 
-        backdrop-filter: blur(46.15px)
-    }
-    .special-mentions{
-        width: 635px; 
-        height: 113.57px; 
-        left: 825px; 
-        top: 67px; 
-        position: absolute; 
-        background: white; 
-        box-shadow: 0px 0px 72.27030181884766px 3.2263529300689697px rgba(0, 0, 0, 0.25); 
-        border-radius: 25.81px; 
-        backdrop-filter: blur(59.95px)
-    }
-    .special-mentions_container{
-        display: flex; 
-        flex-direction: column; 
-        gap: 75px; 
-        position: absolute; 
-        left: 851px; 
-        top: 350px;
-    }
-    .special-mentions_card{
-        width: 574px; 
-        height: 266px; 
-        display: flex;
-        background: white;
-        box-shadow: 0px 2.2613930702209473px 42.401123046875px rgba(0, 0, 0, 0.25); 
-        border-radius: 28.27px;
-    }
-    .special-mentions_title{
-        width: 303.80px;
-        height: 47.53px; 
-        left: 225px; 
-        top: 49.17px; 
-        position: absolute; 
-        text-align: center; 
-        color: #E50000; 
-        font-size: 32.24px; 
-        font-family: Poppins; 
-        font-weight: 700; 
-        word-wrap: break-word;
-    }
-    .special-mentions_name{
-        width: 143.25px; 
-        height: 26.07px; 
-        left: 40.34px; 
-        top: 0px; 
-        position: absolute; 
-        text-align: center; 
-        color: #252525; 
-        font-size: 19.79px; 
-        font-family: Lato; 
-        font-weight: 700; 
-        word-wrap: break-word;
-    }
-    .special-mentions_community{
-        width: 223.98px; 
-        height: 49.88px; 
-        left: 0px; 
-        top: 32.89px; 
-        position: absolute; 
-        text-align: center; 
-        color: #E50000; 
-        font-size: 13.57px; 
-        font-family: Poppins; 
-        font-weight: 700; 
-        word-wrap: break-word;
-    }
-    .special-mentions_place{
-        width: 104.18px; 
-        height: 16.44px; 
-        left: 58px; 
-        top: 62.89px; 
-        position: absolute; 
-        text-align: center; 
-        color: #26235C; 
-        font-size: 13px; 
-        font-family: Lato; 
-        font-weight: 900; 
-        word-wrap: break-word;
-    }
-    .special-mentions_img{
-        width: 104.18px; 
-        height: 105.36px; 
-        left: 21.44px; 
-        top: 29.77px; 
-        position: absolute; 
-        border-radius: 50%; 
-        border: 1.13px #26235C solid;
-    }
-    .special-mentions_border{
-        width: 120.23px; 
-        height: 120.56px; 
-        left: 78.83px; 
-        top: 170.60px; 
-        border-radius: 50%; 
-        position: absolute; 
-        transform: rotate(-138.71deg); 
-        transform-origin: 0 0; 
-        border-left: 2.83px #E50000 solid; 
-        border-bottom: 2.83px #E50000 solid;
-    }
-    footer {
-  background-color: #e50000;
-  color: #fff;
-  padding: 20px;
-}
+        .main_container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: absolute;
 
-.footer-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 1.5rem;
-}
+        }
 
-.footer-logo {
-  width: 20rem;
-}
+        .left {
+            display: flex;
+            position: relative;
+        }
 
-.footer-link {
-  text-decoration: none;
-  color: white;
-}
+        .right {
+            display: flex;
+            position: relative;
+        }
 
-.footer-info-div {
-  max-width: 350px;
-  margin: 0 auto;
-}
+        .leaderboard {
+            display: flex;
+            width: 635px;
+            height: 113.57px;
+            left: 50px;
+            top: 67px;
+            position: absolute;
+            background: white;
+            box-shadow: 0px 0px 72.27030181884766px 3.2263529300689697px rgba(0, 0, 0, 0.25);
+            border-radius: 25.81px;
+            backdrop-filter: blur(59.95px);
+        }
 
-.footer-info-icons {
-  display: flex;
-}
+        .sub_leaderboard_rank {
+            display: flex;
+            width: 21.95px;
+            height: 17.99px;
+            left: -0px;
+            top: 13.67px;
+            position: relative;
+            color: black;
+            font-size: 15.80px;
+            font-family: Inter;
+            font-weight: 700;
+            word-wrap: break-word
+        }
 
-.footer-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.5rem 0;
-}
+        .sub_leaderboard_img {
+            display: flex;
+            width: 48.58px;
+            height: 48.58px;
+            left: 10px;
+            top: 0px;
+            position: relative;
+            border-radius: 9999px
+        }
 
-.footer-text-div {
-  max-width: 350px;
-  margin: 0 auto;
-  line-height: 30px;
-}
+        .sub_leaderboard_name {
+            display: flex;
+            left: 102.20px;
+            top: 6.84px;
+            position: absolute;
+            color: black;
+            font-size: 21.23px;
+            font-family: Poppins;
+            font-weight: 600;
+            word-wrap: break-word
+        }
 
-.footer-line {
-  width: 80%;
-  margin: 0 auto;
-}
+        .sub_leaderboard_score {
+            display: flex;
+            width: 52.18px;
+            height: 14.75px;
+            left: 391.53px;
+            top: 15.47px;
+            position: absolute;
+            color: #A3A3A3;
+            font-size: 14.39px;
+            font-family: Inter;
+            font-weight: 700;
+            word-wrap: break-word
+        }
 
-.footer-social-icons {
-  margin-top: 1rem;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-}
+        .sub_leaderboard_underline {
+            display: flex;
+            width: 417.44px;
+            height: 0px;
+            left: 35.99px;
+            top: 63.34px;
+            position: absolute;
+            border-top: 0.36px rgba(94.56, 89.20, 89.20, 0.54) solid;
+        }
 
-.footer-social-icon {
-  text-decoration: none;
-  color: white;
-}
+        .sub_leaderboard_container {
+            display: flex;
+            width: 1440px;
+            height: 967px;
+            left: -49px;
+            top: 450px;
+            z-index: 10;
+            position: absolute;
+        }
 
-.footer-contact {
-  display: flex;
-  justify-content: space-around;
-}
+        .big_red_circle {
+            width: 705px;
+            height: 681px;
+            left: 646px;
+            top: 1050px;
+            position: absolute;
+            background: rgba(229, 0, 0, 0.94);
+            border-radius: 9999px;
+        }
 
-.footer-copyright {
-  display: flex;
-  justify-content: center;
-}
+        .sub_leaderboard_bg {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 544px;
+            height: 653px;
+            left: 0px;
+            top: 412px;
+            position: absolute;
+            background: white;
+            box-shadow: 0px 0px 90.73945617675781px rgba(0, 0, 0, 0.25);
+            border-radius: 32.41px;
+            backdrop-filter: blur(75.27px)
+        }
 
+        .sub_leaderboard_tab {
+            display: flex;
+            position: relative;
+            top: 20px;
+            left: 35px;
+        }
+
+        .leaderboard_container {
+            width: 536px;
+            height: 550.41px;
+            left: 100px;
+            top: 282px;
+            position: absolute;
+            background: white;
+            box-shadow: 0px 0px 55.63670349121094px 2.483781337738037px rgba(0, 0, 0, 0.25);
+            border-radius: 19.87px;
+            backdrop-filter: blur(46.15px)
+        }
+
+        .special-mentions {
+            width: 635px;
+            height: 113.57px;
+            left: 825px;
+            top: 67px;
+            position: absolute;
+            background: white;
+            box-shadow: 0px 0px 72.27030181884766px 3.2263529300689697px rgba(0, 0, 0, 0.25);
+            border-radius: 25.81px;
+            backdrop-filter: blur(59.95px)
+        }
+
+        .special-mentions_container {
+            display: flex;
+            flex-direction: column;
+            gap: 75px;
+            position: absolute;
+            left: 851px;
+            top: 350px;
+        }
+
+        .special-mentions_card {
+            width: 574px;
+            height: 266px;
+            display: flex;
+            background: white;
+            box-shadow: 0px 2.2613930702209473px 42.401123046875px rgba(0, 0, 0, 0.25);
+            border-radius: 28.27px;
+        }
+
+        .special-mentions_title {
+            width: 303.80px;
+            height: 47.53px;
+            left: 225px;
+            top: 49.17px;
+            position: absolute;
+            text-align: center;
+            color: #E50000;
+            font-size: 32.24px;
+            font-family: Poppins;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+
+        .special-mentions_name {
+            width: 143.25px;
+            height: 26.07px;
+            left: 40.34px;
+            top: 0px;
+            position: absolute;
+            text-align: center;
+            color: #252525;
+            font-size: 19.79px;
+            font-family: Lato;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+
+        .special-mentions_community {
+            width: 223.98px;
+            height: 49.88px;
+            left: 0px;
+            top: 32.89px;
+            position: absolute;
+            text-align: center;
+            color: #E50000;
+            font-size: 13.57px;
+            font-family: Poppins;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+
+        .special-mentions_place {
+            width: 104.18px;
+            height: 16.44px;
+            left: 58px;
+            top: 62.89px;
+            position: absolute;
+            text-align: center;
+            color: #26235C;
+            font-size: 13px;
+            font-family: Lato;
+            font-weight: 900;
+            word-wrap: break-word;
+        }
+
+        .special-mentions_img {
+            width: 104.18px;
+            height: 105.36px;
+            left: 21.44px;
+            top: 29.77px;
+            position: absolute;
+            border-radius: 50%;
+            border: 1.13px #26235C solid;
+        }
+
+        .special-mentions_border {
+            width: 120.23px;
+            height: 120.56px;
+            left: 78.83px;
+            top: 170.60px;
+            border-radius: 50%;
+            position: absolute;
+            transform: rotate(-138.71deg);
+            transform-origin: 0 0;
+            border-left: 2.83px #E50000 solid;
+            border-bottom: 2.83px #E50000 solid;
+        }
+
+        footer {
+            background-color: #e50000;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 1.5rem;
+        }
+
+        .footer-logo {
+            width: 20rem;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-info-div {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .footer-info-icons {
+            display: flex;
+        }
+
+        .footer-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem 0;
+        }
+
+        .footer-text-div {
+            max-width: 350px;
+            margin: 0 auto;
+            line-height: 30px;
+        }
+
+        .footer-line {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .footer-social-icons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .footer-social-icon {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-copyright {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
     <div name="navbar_by_ash" id="navabar">
         <div class="navbar">
+
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+
             <a href="https://hub.vong.earth/login/index.php">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-            </a>
-            <button href="https://hub.vong.earth/login/index.php">LOGIN</button>
+                <button>LOGIN</button> </a>
         </div>
     </div>
     <div name="headerbysanjana">
@@ -461,17 +501,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{ url_for('static', filename='images/vong.jpeg') }}" alt="First slide">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='images/vong.jpeg') }}"
+                        alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ url_for('static', filename='images/sdg.jpeg') }}" alt="Second slide">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='images/sdg.jpeg') }}"
+                        alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ url_for('static', filename='images/dei.jpeg') }}" alt="Third slide">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='images/dei.jpeg') }}"
+                        alt="Third slide">
                 </div>
                 <!-- New carousel item (fourth slide) -->
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ url_for('static', filename='images/climate.jpeg') }}" alt="Fourth slide">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='images/climate.jpeg') }}"
+                        alt="Fourth slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -485,118 +529,123 @@
         </div>
     </div>
     <div name="LatestEventsbyaiswarya" style="border: 1px solid black;margin-top: 100px;">
-        <h1 style="padding-left: 10%;">Latest Events</h1>
-        <div id="LatestEvents">
-            {% set data_list = data|list %}
-            <div class="container">
+        <div style="text-align: center;">
+            <h1 style="display: inline-block; margin-right: auto;">Latest Events</h1>
+            <a href="https://hub.vong.earth/calendar/view.php?view=month">
+                <img src="{{ url_for('static', filename='images/Search top.png') }}" alt="Your Image"
+                    style="display: inline-block; vertical-align: middle; margin-left: 30%;">
+            </a>
+        </div>
+        <a href="https://hub.vong.earth/calendar/view.php?view=upcoming&course=1">
+            <div id="LatestEvents">
+                {% set data_list = data|list %}
+                <div class="container">
 
-                <div class="row">
-                    <div class="col-md-6" id="longnews">
-                        <div class="event offline" style="height: 100%;margin-bottom: 20px;">
-                            {{ data_list[3][4]|safe }}
-                            <div
-                                style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
-                                <h2 style="font-weight: bold;font-size: 36px;">{{ data_list[3][1] }} </h2>
-                                <p style="color: black; font-weight: bold;padding: 5px;">{{ data_list[3][3] }}</p>
+                    <div class="row">
+                        <div class="col-md-6" id="longnews">
+                            <div class="event offline" style="height: 100%;margin-bottom: 20px;">
+                                {{ data_list[3][4]|safe }}
+                                <div
+                                    style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+                                    <h2 style="font-weight: bold;font-size: 36px;">{{ data_list[3][1] }} </h2>
+                                    <p style="color: black; font-weight: bold;padding: 5px;">{{ data_list[3][3] }}</p>
+                                </div>
+
+
+                                <p>
+                                    {{ data_list[3][2] }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="shortnews">
+                            <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
+                                {{ data_list[2][4]|safe }}
+                                <div style="margin-left: 10px;">
+                                    <h2 style="padding-left: 20px;">{{ data_list[2][1] }}</h2>
+
+                                    <p style="color: black; font-weight: bold;">{{ data_list[2][3] }}</p>
+                                </div>
+                            </div>
+                            <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
+                                {{ data_list[2][4]|safe }}
+                                <div style="margin-left: 10px;">
+                                    <h2 style="padding-left: 20px;">{{ data_list[2][1] }}</h2>
+
+                                    <p style="color: black; font-weight: bold;">{{ data_list[2][3] }}</p>
+                                </div>
                             </div>
 
 
-                            <p>
-                                {{ data_list[3][2] }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6" id="shortnews">
-                        <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
-                            {{ data_list[2][4]|safe }}
-                            <div style="margin-left: 10px;">
-                                <h2 style="padding-left: 20px;">{{ data_list[2][1] }}</h2>
+                            <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
+                                {{ data_list[0][4]|safe }}
+                                <div style="margin-left: 10px;">
+                                    <h2 style="padding-left: 20px;">{{ data_list[0][1] }}</h2>
 
-                                <p style="color: black; font-weight: bold;">{{ data_list[2][3] }}</p>
+                                    <p style="color: black; font-weight: bold;">{{ data_list[0][3] }}</p>
+                                </div>
                             </div>
+
+
+
                         </div>
-                        <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
-                            {{ data_list[2][4]|safe }}
-                            <div style="margin-left: 10px;">
-                                <h2 style="padding-left: 20px;">{{ data_list[2][1] }}</h2>
-
-                                <p style="color: black; font-weight: bold;">{{ data_list[2][3] }}</p>
-                            </div>
-                        </div>
-
-                        
-                        <div class="event online" style="display: flex; align-items: center; flex-direction: row;">
-                            {{ data_list[0][4]|safe }}
-                            <div style="margin-left: 10px;">
-                                <h2 style="padding-left: 20px;">{{ data_list[0][1] }}</h2>
-
-                                <p style="color: black; font-weight: bold;">{{ data_list[0][3] }}</p>
-                            </div>
-                        </div>
-
-
-
                     </div>
                 </div>
             </div>
-        </div>
+            </a>
     </div>
-    <iframe src="https://reports.vong.earth/lifetime.html" width="100%" title="Embedded Content" height="2000px" frameborder="0" style="overflow: hidden;border: none;"></iframe>
+    <iframe src="https://reports.vong.earth/lifetime.html" width="100%" title="Embedded Content" height="2000px"
+        frameborder="0" style="overflow: hidden;border: none;"></iframe>
     <footer style="font-family:'Poppins', sans-serif;">
         <div class="footer-main">
             <div class="footer-info">
-              <div class="footer-info-div">
-                <img
-                  src="{{ url_for('static', filename='images/logo.png') }}"
-                  alt="vonghub logo"
-                  class="footer-logo"
-                />
-    
-                <hr style="color: #fff;" />
-    
-                <p>
-                  - G-9, Hemkunt Tower 98 Nehru Place <br />
-                  New Delhi 110019
-                </p>
-                <p></p>
-                <a href="#" class="footer-link">- info@vong.earth</a>
-              </div>
+                <div class="footer-info-div">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="vonghub logo"
+                        class="footer-logo" />
+
+                    <hr style="border-color: #fff;" />
+
+
+                    <p>
+                        - G-9, Hemkunt Tower 98 Nehru Place <br />
+                        New Delhi 110019
+                    </p>
+                    <p></p>
+                    <a href="#" class="footer-link">- info@vong.earth</a>
+                </div>
             </div>
             <div class="footer-text">
-              <div class="footer-text-div">
-                <hr style="color: #fff;" />
-                <p>
-                  Let's transform the World together by taking small steps toward a
-                  greener, cleaner, and more sustainable future. Be a part of the
-                  VONG movement, and become the change-makers of tomorrow!
-                </p>
-                <hr style="color: #fff;" />
-              </div>
+                <div class="footer-text-div">
+                    <hr style="border-color: #fff;" />
+
+                    <p>
+                        Let's transform the World together by taking small steps toward a
+                        greener, cleaner, and more sustainable future. Be a part of the
+                        VONG movement, and become the change-makers of tomorrow!
+                    </p>
+                    <hr style="border-color: #fff;" />
+
+                </div>
             </div>
-          </div>
-          <div class="footer-line"><hr /></div>
-          <div class="footer-social-icons">
-            <a href="#" class="footer-social-icon"
-              ><ion-icon name="logo-facebook" size="large"></ion-icon
-            ></a>
-            <a href="#" class="footer-social-icon"
-              ><ion-icon name="logo-instagram" size="large"></ion-icon
-            ></a>
-            <a href="#" class="footer-social-icon"
-              ><ion-icon name="logo-twitter" size="large"></ion-icon
-            ></a>
-    
-            <a href="#" class="footer-social-icon"
-              ><ion-icon name="logo-linkedin" size="large"></ion-icon
-            ></a>
-          </div>
-          <div class="footer-contact">
+        </div>
+        <div class="footer-line">
+            <hr />
+        </div>
+        <div class="footer-social-icons">
+            <a href="#" class="footer-social-icon"><ion-icon name="logo-facebook" size="large"></ion-icon></a>
+            <a href="#" class="footer-social-icon"><ion-icon name="logo-instagram" size="large"></ion-icon></a>
+            <a href="#" class="footer-social-icon"><ion-icon name="logo-twitter" size="large"></ion-icon></a>
+
+            <a href="#" class="footer-social-icon"><ion-icon name="logo-linkedin" size="large"></ion-icon></a>
+        </div>
+        <div class="footer-contact">
             <p>Contact us</p>
             <p>FAQs</p>
-          </div>
-          <div class="footer-copyright"><p>Copyright © 2023 – VONG</p></div>
-        </footer>
-       
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © 2023 – VONG</p>
+        </div>
+    </footer>
+
     <script>
         // Wait for the document to be fully loaded
         document.addEventListener("DOMContentLoaded", function () {
@@ -619,14 +668,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

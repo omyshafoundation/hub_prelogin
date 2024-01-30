@@ -189,7 +189,7 @@ try:
                            'title_description': row['title_description'],
                            'added_at': row['added_at'].isoformat() if row['added_at'] else None
                            } for row in rows]
-                result = result[::-1]
+                result = result[::-1][:6]
 
 except mysql.connector.Error as err:
     print("error")
