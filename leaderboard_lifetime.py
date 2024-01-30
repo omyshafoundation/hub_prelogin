@@ -546,8 +546,7 @@ html_template = '''
                         <div style="width: 319px; height: 92.77px; left: 216px; top: 106.17px; position: relative; text-align: center; color: black; font-size: 12.26px; font-family: Poppins; font-weight: 500; word-wrap: break-word">{{ mention.title_description }}<br/><br/></div>
                         <div style="width: 223.98px; height: 82.77px; left: 8px; top: 170px;  position: absolute">
                             <div class="special-mentions_name">{{ mention.name }}</div>
-                            <div class="special-mentions_community">SDG COMMUNITY</div>
-                            <div class="special-mentions_place">NASIK</div>
+                            
                         </div>
                     </div>
                 </div>
